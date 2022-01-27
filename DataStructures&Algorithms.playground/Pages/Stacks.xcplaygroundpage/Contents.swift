@@ -119,21 +119,28 @@ func checkParentheses1(_ string: String) -> Bool {
     guard string != "" else { return true }
     
     var stack = Stack<Character>()
-    var count = 0
+    var countStart = 0
+    var countEnd = 0
     
     for character in string {
-        stack.push(character)
+        if character == "(" || character == ")" {
+            stack.push(character)
+        }
     }
     
     while let character = stack.pop() {
         if character == ")" {
-            count += 1
+            if stack.isEmpty {
+                return false
+            }
+            countEnd += 1
         } else if character == "(" {
-            count -= 1
+            countStart += 1
         }
     }
     
-    if count != 0 {
+    print(countStart)
+    if countStart != countEnd {
         return false
     }
     
@@ -158,5 +165,5 @@ func checkParentheses2(_ string: String) -> Bool {
     return stack.isEmpty
 }
 
-print(checkParentheses1("(some)"))
-print(checkParentheses2("(some)"))
+print(checkParentheses1(")(some"))
+print(checkParentheses2("((some)"))
