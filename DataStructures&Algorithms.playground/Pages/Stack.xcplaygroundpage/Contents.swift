@@ -63,24 +63,6 @@ example(of: "initializing a stack from an array literal") {
     stack.pop()
 }
 
-// MARK: Make stack initializable from an array literal
-extension Stack: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: Element...) {
-        storage = elements
-    }
-}
-
-// MARK: Debug Description
-extension Stack: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        """
-        ----top----
-        \(storage.map { "\($0)" }.reversed().joined(separator: "\n"))
-        -----------
-        """
-      }
-}
-
 // MARK: Challenges
 
 // Challenge #1
@@ -139,7 +121,6 @@ func checkParentheses1(_ string: String) -> Bool {
         }
     }
     
-    print(countStart)
     if countStart != countEnd {
         return false
     }
@@ -167,3 +148,23 @@ func checkParentheses2(_ string: String) -> Bool {
 
 print(checkParentheses1(")(some"))
 print(checkParentheses2("((some)"))
+
+// MARK: Extensions
+
+// Make stack initializable from an array literal
+extension Stack: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Element...) {
+        storage = elements
+    }
+}
+
+//Debug Description
+extension Stack: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        """
+        ----top----
+        \(storage.map { "\($0)" }.reversed().joined(separator: "\n"))
+        -----------
+        """
+      }
+}
