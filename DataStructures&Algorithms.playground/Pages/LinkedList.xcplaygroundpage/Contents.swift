@@ -118,4 +118,6 @@ example(of: "linked list cow") {
 
 //Challenge # 1
 //Create a function that prints the nodes of a linked list in reverse order.
-
+func reverse<Value>(_ list: LinkedList<Value>) {
+    
+}
