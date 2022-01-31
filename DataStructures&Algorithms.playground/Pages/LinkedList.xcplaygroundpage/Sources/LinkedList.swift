@@ -46,9 +46,7 @@ public struct LinkedList<Value> {
     }
     
     // Finding a particular node in the list
-    public mutating func node(at index: Int) -> Node<Value>? {
-        copyNodes()
-        
+    public func node(at index: Int) -> Node<Value>? {
         var currentNode = head
         var currentIndex = 0
         
@@ -118,9 +116,9 @@ public struct LinkedList<Value> {
     }
     
     public mutating func remove(after node: Node<Value>) -> Value? {
-        guard let node = copyNodes(returningCopyOf: node) else {
-            return nil
-        }
+//        guard let node = copyNodes(returningCopyOf: node) else {
+//            return nil
+//        }
         
         defer {
             if node.next === tail {
@@ -157,7 +155,7 @@ public struct LinkedList<Value> {
     }
     
     // special for remove operation
-    private mutating func copyNodes(returningCopyOf node: Node<Value>?) -> Node<Value>? {
+    internal mutating func copyNodes(returningCopyOf node: Node<Value>?) -> Node<Value>? {
         guard !isKnownUniquelyReferenced(&head) else {
             return nil
         }
