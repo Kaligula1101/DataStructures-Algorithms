@@ -9,7 +9,7 @@ public struct QueueArray<T>: Queue {
         array.isEmpty
     }
     
-    public var peek: Element? {
+    public var peek: T? {
         array.first
     }
     
