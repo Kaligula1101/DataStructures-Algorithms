@@ -5,5 +5,6 @@
         <page name='LinkedList'/>
         <page name='Queue'/>
         <page name='Tree'/>
+        <page name='Binary Tree'/>
     </pages>
 </playground>
