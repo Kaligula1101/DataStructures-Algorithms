@@ -7,6 +7,6 @@
         <page name='Tree'/>
         <page name='Binary Tree'/>
         <page name='Binary Search Tree'/>
-        <page name='AVL Trees'/>
+        <page name='AVL Tree'/>
     </pages>
 </playground>

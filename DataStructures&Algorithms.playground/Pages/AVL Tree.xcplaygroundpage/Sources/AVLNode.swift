@@ -1,24 +1,36 @@
 import Foundation
 
+protocol TraversalBinaryNode {
+    
+    associatedtype Element
+    
+    var value: Element { get }
+    var leftChild: Self? { get }
+    var rightChild: Self? { get }
+    
+    func traverseInOrder(visit: (Element) -> Void)
+    func traversePreOrder(visit: (Element) -> Void)
+    func traversePostOrder(visit: (Element) -> Void)
+}
 
-public class AVLNode<Element> {
+public final class AVLNode<Element> {
     
-    public var value: Element
-    public var leftChild: AVLNode?
-    public var rightChild: AVLNode?
+    var value: Element
+    var leftChild: AVLNode?
+    var rightChild: AVLNode?
     
-    public var height = 0
-    public var balanceFactor: Int {
+    var height = 0
+    var balanceFactor: Int {
         leftHeight - rightHeight
     }
-    public var leftHeight: Int {
+    var leftHeight: Int {
         leftChild?.height ?? -1
     }
-    public var rightHeight: Int {
+    var rightHeight: Int {
         rightChild?.height ?? -1
     }
     
-    public init(value: Element) {
+    init(value: Element) {
         self.value = value
     }
 }
@@ -45,21 +57,21 @@ extension AVLNode: CustomStringConvertible {
     }
 }
 
-extension AVLNode {
+extension AVLNode: TraversalBinaryNode {
     
-    public func traverseInOrder(visit: (Element) -> Void) {
+    func traverseInOrder(visit: (Element) -> Void) {
         leftChild?.traverseInOrder(visit: visit)
         visit(value)
         rightChild?.traverseInOrder(visit: visit)
     }
     
-    public func traversePreOrder(visit: (Element) -> Void) {
+    func traversePreOrder(visit: (Element) -> Void) {
         visit(value)
         leftChild?.traversePreOrder(visit: visit)
         rightChild?.traversePreOrder(visit: visit)
     }
     
-    public func traversePostOrder(visit: (Element) -> Void) {
+    func traversePostOrder(visit: (Element) -> Void) {
         leftChild?.traversePostOrder(visit: visit)
         rightChild?.traversePostOrder(visit: visit)
         visit(value)
