@@ -11,5 +11,6 @@
         <page name='Trie'/>
         <page name='BinarySearch'/>
         <page name='Heap'/>
+        <page name='PriorityQueues'/>
     </pages>
 </playground>
