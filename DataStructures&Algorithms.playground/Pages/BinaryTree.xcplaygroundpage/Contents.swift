@@ -1,5 +1,6 @@
 import Foundation
 
+
 var tree: BinaryNode<Int> = {
     let zero = BinaryNode(value: 0)
     let one = BinaryNode(value: 1)

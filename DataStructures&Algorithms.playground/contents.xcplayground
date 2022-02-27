@@ -5,8 +5,10 @@
         <page name='LinkedList'/>
         <page name='Queue'/>
         <page name='Tree'/>
-        <page name='Binary Tree'/>
-        <page name='Binary Search Tree'/>
-        <page name='AVL Tree'/>
+        <page name='BinaryTree'/>
+        <page name='BinarySearchTree'/>
+        <page name='AVLTree'/>
+        <page name='Trie'/>
+        <page name='BinarySearch'/>
     </pages>
 </playground>
