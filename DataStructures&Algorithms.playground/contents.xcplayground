@@ -14,5 +14,6 @@
         <page name='PriorityQueues'/>
         <page name='O(n^2)SortingAlgorithms'/>
         <page name='MergeSort'/>
+        <page name='RadixSort'/>
     </pages>
 </playground>
