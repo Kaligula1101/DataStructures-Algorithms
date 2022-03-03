@@ -12,5 +12,7 @@
         <page name='BinarySearch'/>
         <page name='Heap'/>
         <page name='PriorityQueues'/>
+        <page name='O(n^2)SortingAlgorithms'/>
+        <page name='MergeSort'/>
     </pages>
 </playground>
